@@ -1,7 +1,6 @@
-import type { SearchItem } from '@/types/internal/novel';
-import type { RanobeItem, RanobeSingleItem, RanobeSingleContent, RanobeVolume } from '@/types/responses/ranobe';
+import type { RanobeSingleItem, RanobeSingleItemMe, RanobeSingleContent } from '@/types/responses/ranobe';
 
-export function mapRanobeSingleItem(data: RanobeSingleItem): RanobeSingleItem {
+export function mapRanobeSingleItem(data: RanobeSingleItem): RanobeSingleItemMe {
   return {
     id: data.id,
     names: data.names,
@@ -13,7 +12,8 @@ export function mapRanobeSingleItem(data: RanobeSingleItem): RanobeSingleItem {
     posters: data.posters,
     description: data.description,
     authors: data.authors || [],
-    translators: data.translators || [],  
+    translators: data.translators || [],
+    genres: data.tags.genres.map(g => g.title) || [],
   };
 }
 
