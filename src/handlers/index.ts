@@ -18,15 +18,15 @@ const routes: Route[] = [
     handler: () => createResponse(HttpStatus.OK, { message: 'Ranobehub Parser Server API' })
   },
   { 
-    pattern: /^GET \/api\/chapter$/, 
+    pattern: /^GET \/parser\/chapter$/, 
     handler: chapterHandler 
   },
   { 
-    pattern: /^GET \/api\/search$/, 
+    pattern: /^GET \/parser\/search$/, 
     handler: searchHandler 
   },
   { 
-    pattern: /^GET \/api\/novela\/(?<id>\d+)$/, 
+    pattern: /^GET \/parser\/novela\/(?<id>\d+)$/, 
     handler: novelaHandler 
   }
 ];
